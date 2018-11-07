@@ -1,0 +1,253 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="Risikobericht.controller.v_main" displayBlock="true">
+	<App>
+		<pages>
+			<Page title="{i18n>title}" enableScrolling="false">
+				<content>
+				    <HBox width="100%" id="__hbox0">
+				        <items>
+				            <VBox width="100%" direction="Column" id="__vbox0">
+				                <items>
+				                    <Toolbar width="100%" id="__toolbar1">
+				                        <content>
+				                            <SearchField width="100%" placeholder="Suchen" id="__field0" liveChange="livesearch"/>
+				                            <Button width="40px" id="__button1" icon="sap-icon://filter"/>
+				                        </content>
+				                    </Toolbar>
+				                    <List noDataText="Drop list items here" id="__list0" items="{/DatenSet}" growing="true">
+				                        <items>
+				                            <StandardListItem type="Navigation" icon="sap-icon://person-placeholder" id="__item0" title="{Kunnr} {Name1}" press="choosedeb" tap=""/></items>
+				                    </List>
+				                </items>
+				            </VBox>
+				            <VBox width="70%" direction="Column" id="__vbox1">
+				            <items>
+				                <sap.uxap:ObjectPageHeader xmlns:sap.uxap="sap.uxap" id="__header0" objectTitle="Name" isObjectIconAlwaysVisible="true" objectImageURI="https://sap-certification.info/wp-content/uploads/2012/03/what-is-sap.png" objectImageShape="Circle">
+				                    <sap.uxap:navigationBar>
+				                        <Bar id="__bar1">
+				                            <contentRight>
+				                                <Button width="40px" id="__button0" icon="sap-icon://share-2" press="showpopup"/>
+				                                <Button width="40px" id="__button2" icon="sap-icon://full-screen" press="fullscreen"/>
+				                                <Button width="40px" id="__button3" icon="sap-icon://print"/>
+				                                <Button width="40px" id="__button4" icon="sap-icon://action-settings"/>
+				                            </contentRight>
+				                        </Bar>
+				                    </sap.uxap:navigationBar>
+				                </sap.uxap:ObjectPageHeader>
+				                <sap.uxap:ObjectPageHeaderContent xmlns:sap.uxap="sap.uxap" id="__content0">
+				                    <sap.uxap:content>
+				                        <ObjectAttribute id="__attribute0" title="Debitor"/>
+				                        <ObjectAttribute id="__attribute1" title="Sgmnt" tooltip="Kreditsegment"/>
+				                        <ObjectAttribute id="__attribute2" title="Datum"/>
+				                        <ObjectAttribute id="__attribute3" title="Str."/>
+				                        <ObjectAttribute id="__attribute4" title="Land, Ort"/>
+				                        <ObjectAttribute id="__attribute5" title="Tel."/>
+				                    </sap.uxap:content>
+				                </sap.uxap:ObjectPageHeaderContent>
+				                <IconTabBar id="__bar2" showOverflowSelectList="true" headerMode="Inline" showSelection="false">
+				                    <items>
+				                        <IconTabFilter text="Aktueller Kreditantrag" id="__filter3">
+				                        <content>
+				                            <HBox width="100%" id="__hbox1">
+				                                <items>
+				                                    <VBox width="100%" direction="Column" id="__vbox2">
+				                                    <items>
+				                                        <InputListItem label="Kreditanforderung" id="__item21">
+				                                            <content>
+				                                                <Input value="0,00 EUR" width="100%" id="__input5" editable="false"/>
+				                                            </content>
+				                                        </InputListItem>
+				                                        <InputListItem label="Risikoklasse" id="__item22">
+				                                            <content>
+				                                                <Input value="600" width="100%" id="__input6" editable="false"/>
+				                                            </content>
+				                                        </InputListItem>
+				                                        <InputListItem label="Kreditsperre" id="__item23">
+				                                            <content>
+				                                                <Input value="Kreditsperre nicht setzen" width="100%" id="__input7" editable="false"/>
+				                                            </content>
+				                                        </InputListItem>
+				                                        <InputListItem label="Herkunft" id="__item24">
+				                                            <content>
+				                                                <Input value="input" width="100%" id="__input8" editable="false"/>
+				                                            </content>
+				                                        </InputListItem>
+				                                        <InputListItem label="Ursache" id="__item25">
+				                                            <content>
+				                                                <Input value="Erster Kreditantrag ( Datum nächste Prüfung ist leer )" width="100%" id="__input9" editable="false"/>
+				                                            </content>
+				                                        </InputListItem>
+				                                    </items>
+				                                    </VBox>
+				                                    <VBox width="100%" direction="Column" id="__vbox3">
+				                                        <items>
+				                                            <InputListItem label="Systemvorschlag übersteuert" id="__item27">
+				                                                <content>
+				                                                    <Input value="Nein" width="100%" id="__input11" editable="false"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                            <InputListItem label="Zusatzlimit" id="__item28">
+				                                                <content>
+				                                                    <Input value="0,00 EUR" width="100%" id="__input12" editable="false"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                            <InputListItem label="Neues Kreditlimit" id="__item29" highlight="Error">
+				                                                <content>
+				                                                    <Input value="0,00 EUR" width="100%" id="__input13" editable="false"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                            <InputListItem label="Datum nächste Prüfung" id="__item30">
+				                                                <content>
+				                                                    <Input value="29.05.2018" width="100%" id="__input14" editable="false"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                        </items>
+				                                    </VBox>
+				                                </items>
+				                            </HBox>
+				                        </content>
+				                        </IconTabFilter>
+				                        <IconTabFilter id="__filter4" text="Letzte Kreditentscheidung" iconColor="Neutral">
+				                        <content>
+				                            <HBox width="100%" id="__hbox2">
+				                                <items>
+				                                    <VBox width="100%" direction="Column" id="__vbox4">
+				                                        <items>
+				                                            <InputListItem label="Datum" id="__item1">
+				                                                <content>
+				                                                    <Input value="23.05.2017" width="100%" id="__input0" editable="false"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                            <InputListItem label="Benutzername" id="__item2">
+				                                                <content>
+				                                                    <Input value="JOESEL" width="100%" id="__input1" editable="false"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                            <InputListItem label="Risikoklasse" id="__item5">
+				                                                <content>
+				                                                    <Input width="100%" id="__input2" editable="false"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                            <InputListItem label="Kreditsperre" id="__item6">
+				                                                <content>
+				                                                    <Input value="Keine Kreditsperre" width="100%" id="__input3" editable="false"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                            <InputListItem label="Ursache" id="__item7">
+				                                                <content>
+				                                                    <Input value="Veränderung der Risikoklasse" width="100%" id="__input4"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                        </items>
+				                                    </VBox>
+				                                    <VBox width="100%" direction="Column" id="__vbox5">
+				                                        <items>
+				                                            <InputListItem label="Systemvorschlag übersteuert" id="__item8">
+				                                                <content>
+				                                                    <Input value="Nein" width="100%" id="__input10" editable="false"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                            <InputListItem label="Komponenten" id="__item9">
+				                                                <content>
+				                                                    <Input value="WKV" width="100%" id="__input15" editable="false"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                            <InputListItem label="Zusatzlimit" id="__item10">
+				                                                <content>
+				                                                    <Input value="0,00 EUR" width="100%" id="__input16" editable="false"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                            <InputListItem label="Kreditlimit" id="__item11">
+				                                                <content>
+				                                                    <Input value="15.000,00 EUR" width="100%" id="__input17" editable="false"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                            <InputListItem label="Nächste Prüfung" id="__item12">
+				                                                <content>
+				                                                    <Input value="31.12.9999" width="100%" id="__input18" editable="false"/>
+				                                                </content>
+				                                            </InputListItem>
+				                                        </items>
+				                                    </VBox>
+				                                </items>
+				                            </HBox>
+				                        </content>
+				                        </IconTabFilter>
+				                        <IconTabFilter iconColor="Neutral" id="__filter5" text="SAP-Kreditmanagement"/>
+				                        <IconTabFilter iconColor="Neutral" id="__filter0" text="Anmerkungen"/>
+				                        <IconTabFilter text="Saldo/Umsatz" iconColor="Neutral" id="__filter1"/>
+				                        <IconTabFilter text="Kreditversicherungen" iconColor="Neutral" id="__filter2">
+				                            <content>
+				                                <Table noDataText="Drop column list items here and columns in the area above" id="__table1" backgroundDesign="Transparent">
+				                                    <items>
+				                                        <ColumnListItem id="__item3">
+				                                            <cells>
+				                                                <Text text="Row 1 Cell 1" id="__text19"/>
+				                                                <Text text="Row 1 Cell 2" id="__text20"/>
+				                                                <Text text="Row 1 Cell 3" id="__text21"/></cells>
+				                                        </ColumnListItem>
+				                                        <ColumnListItem id="__item4">
+				                                            <cells>
+				                                                <Text text="Row 2 Cell 1" id="__text22"/>
+				                                                <Text text="Row 2 Cell 2" id="__text23"/>
+				                                                <Text text="Row 2 Cell 3" id="__text24"/></cells>
+				                                        </ColumnListItem></items>
+				                                    <columns>
+				                                        <Column id="__column3">
+				                                            <header>
+				                                                <Label text="KV" id="__label3"/>
+				                                            </header>
+				                                        </Column>
+				                                        <Column id="__column4">
+				                                            <header>
+				                                                <Label text="Vrtrg" id="__label4"/>
+				                                            </header>
+				                                        </Column>
+				                                        <Column id="__column5">
+				                                            <header>
+				                                                <Label text="VV" id="__label5"/>
+				                                            </header>
+				                                        </Column>
+				                                        <Column id="__column6">
+				                                            <header>
+				                                                <Text text="VK" id="__text25"/>
+				                                            </header>
+				                                        </Column>
+				                                        <Column id="__column7">
+				                                            <header>
+				                                                <Text text="Vers.su." id="__text26"/>
+				                                            </header>
+				                                        </Column>
+				                                        <Column id="__column8">
+				                                            <header>
+				                                                <Text text="Zus. Limit" id="__text27"/>
+				                                            </header>
+				                                        </Column>
+				                                        <Column id="__column9">
+				                                            <header>
+				                                                <Text text="Hs" id="__text28"/>
+				                                            </header>
+				                                        </Column>
+				                                        <Column id="__column10">
+				                                            <header>
+				                                                <Text text="Historienschl." id="__text29"/>
+				                                            </header>
+				                                        </Column></columns></Table>
+				                            </content>
+				                        </IconTabFilter></items>
+				                </IconTabBar>
+				            </items>
+				            </VBox>
+				        </items>
+				    </HBox>
+				</content>
+			<footer>
+			    <Toolbar width="100%" id="__toolbar2">
+			        <content>
+			            <MessageStrip showIcon="true" showCloseButton="true" id="__strip0" type="None" visible="false"/>
+			        </content>
+			    </Toolbar>
+			</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

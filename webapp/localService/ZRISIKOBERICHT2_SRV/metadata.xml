@@ -1,0 +1,45 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZRISIKOBERICHT2_SRV" xml:lang="de" sap:schema-version="1">
+            <EntityType Name="Daten" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Mandt"/>
+                    <PropertyRef Name="Kunnr"/>
+                    <PropertyRef Name="credit_sgmnt"/>
+                </Key>
+                <Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Mandant" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kunnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Debitor" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="credit_sgmnt" Type="Edm.String" Nullable="false" sap:label="Kreditsegment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Land1" Type="Edm.String" Nullable="false" sap:label="Land" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name1" Type="Edm.String" Nullable="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name2" Type="Edm.String" Nullable="false" sap:label="Name 2" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Ort01" Type="Edm.String" Nullable="false" sap:label="Ort" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Pstlz" Type="Edm.String" Nullable="false" sap:label="Postleitzahl" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Regio" Type="Edm.String" Nullable="false" sap:label="Region" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sortl" Type="Edm.String" Nullable="false" sap:label="Suchbegriff" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Stras" Type="Edm.String" Nullable="false" sap:label="Straße" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Telf1" Type="Edm.String" Nullable="false" sap:label="Telefon-1" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Telfx" Type="Edm.String" Nullable="false" sap:label="Telefax" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            	<Property Name="Req_Limit" Type="Edm.String" Nullable="false" sap:label="Telefax" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            	<Property Name="Req_Ctlpc" Type="Edm.String" Nullable="false" sap:label="Telefax" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            	<Property Name="Req_Crblb" Type="Edm.String" Nullable="false" sap:label="Telefax" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            	<Property Name="Req_Reason" Type="Edm.String" Nullable="false" sap:label="Telefax" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            	<Property Name="Appr_Src" Type="Edm.String" Nullable="false" sap:label="Telefax" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            	<Property Name="Xlimit_Modified" Type="Edm.String" Nullable="false" sap:label="Telefax" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            	<Property Name="Limit_Add" Type="Edm.String" Nullable="false" sap:label="Telefax" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            	<Property Name="Limit_Request" Type="Edm.String" Nullable="false" sap:label="Telefax" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZRISIKOBERICHT2_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="DatenSet" EntityType="ZRISIKOBERICHT2_SRV.Daten" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZRISIKOBERICHT2_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZRISIKOBERICHT2_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
